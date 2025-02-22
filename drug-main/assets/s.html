@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autocomplete Example</title>
+    <style>
+        .autocomplete-suggestions {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            z-index: 1000;
+        }
+        .autocomplete-suggestion {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .autocomplete-suggestion:hover {
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Autocomplete Input</h1>
+    <div style="position: relative;">
+        <input type="text" id="autocomplete-input" onkeyup="showSuggestions(this.value)" placeholder="Type here...">
+        <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
+    </div>
+
+    <script>
+        const options = ['Nitroglycerin', 'Aspirin', 'Beta-blockers', 'Calcium channel blockers', 'Thrombolytic drugs', 'Antifungal Cream', 'Fluconazole', 'Terbinafine', 'Clotrimazole', 'Ketoconazole'];
+
+        function showSuggestions(value) {
+            const suggestionsContainer = document.getElementById('autocomplete-suggestions');
+            suggestionsContainer.innerHTML = '';
+            if (value) {
+                const filteredOptions = options.filter(option => option.toLowerCase().includes(value.toLowerCase()));
+                filteredOptions.forEach(option => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.classList.add('autocomplete-suggestion');
+                    suggestionItem.innerText = option;
+                    suggestionItem.onclick = function() {
+                        document.getElementById('autocomplete-input').value = option;
+                        suggestionsContainer.innerHTML = '';
+                    };
+                    suggestionsContainer.appendChild(suggestionItem);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
