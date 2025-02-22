@@ -1,160 +1,82 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Drug</title>
-
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-
-  <!-- font awesome style -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug</title>
+    <link href="{% static 'css/styles1.css' %}" rel="stylesheet" />
 </head>
-
-<body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container">{% comment %}
-        <div class="top_contact-container">
-          <div class="tel_container">
-            <a href="">
-              <img src="{% static 'images/telephone-symbol-button.png' %}" alt=""> Call : +01 1234567890
-            </a>
-          </div>
-          <div class="social-container">
-            <a href="">
-              <img src="{% static 'images/fb.png' %}" alt="" class="s-1">
-            </a>
-            <a href="">
-              <img src="{% static 'images/twitter.png' %}" alt="" class="s-2">
-            </a>
-            <a href="">
-              <img src="{% static 'images/instagram.png' %}" alt="" class="s-3">
-            </a>
-          </div>
-        </div>{% endcomment %}
-      </div>
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3 navbar-dark">
-          <a class="navbar-brand" href="{% url 'index' %}">
-            <img src="{% static 'images/logo.png' %}" alt="">
-            <span>
-              Drug
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'about' %}"> About </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'medicine' %}"> Medicine </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'adminlogin' %}"> admin </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'userlogin' %}"> user</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
-                </li>
-              </ul>
-              <form class="form-inline ">
-                {% csrf_token %}
-                <input type="search" placeholder="Search">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
-              <div class="login_btn-contanier ml-0 ml-lg-5">
-                <a href="">
-                  <img src="{% static 'images/user.png' %}" alt="">
-                  <span>
-                    Login
-                  </span>
-                </a>
+<body id="top">
+    <header>
+      <div class="container">
+          <div class="col-1">
+              <div class="p-2">
+                  <a href="{% url 'index' %}" class="Btn">
+                      <span class="svgContainer">
+                          <h1 class="logo">Drug</h1>
+                      </span>
+                      <span class="BG"></span>
+                  </a>
               </div>
-            </div>
           </div>
-
-        </nav>
+          <div class="col-auto">
+          </div>
+          <div class="col-auto">
+              <nav>
+                  <ul>
+                      <li><a href="{% url 'index' %}">Home</a></li>
+                      <!-- <li><a href="#about">About</a></li>
+                      <li><a href="#medicine">Medicine</a></li>
+                      <li><a href="{% url 'adminlogin' %}">Admin</a></li>
+                      <li><a href="{% url 'userlogin' %}">User</a></li>
+                      <li><a href="#contact">Contact</a></li> -->
+                      <li>
+                          <form action="" method="get">
+                              <input class="input-container" type="text" id="search" name="search" placeholder="search">
+                          </form>
+                      </li>
+                      <li><a href="#"><span><img src="{% static 'images/menu.png' %}"/></span></a></li>
+                  </ul>
+              </nav>
+          </div>
+          
+      </div>
+      <div class="container" style="padding: 2em;">
+        <div class="col-4"></div>
+        <div class="col-4 p-3 dpsw">
+            <h2 class="p-4 text-shadow text-center">User Login</h2> 
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="input-container" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="input-container" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary shadow-primary btn-block">Login</button>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="#" >Forgot Password?</a>
+                </div>
+                <div>
+                    <p class="mt-4">Don't have an account? <a href="{% url 'userregister' %}" >Register here</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
       </div>
     </header>
-
-
-    <div class="container-fluid py-5 pt-5">
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-lg-6">
-                  <div class="bg-light rounded p-5">
-                    <h2 class="p-4 text-shadow text-center">User Login</h2> 
-                  
-                  <div class="p-3 pl-5 pr-5 pb-5">
-                  <form action="" method="POST">
-                      {% csrf_token %}
-                      <div class="form-group mb-3">
-                          <label for="email" class="form-label">Email Address</label>
-                          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                      </div>
-                      <div class="form-group mb-4">
-                          <label for="password" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-                      </div>
-                      <div class="text-center">
-                          <button type="submit" class="btn btn-primary shadow-primary btn-block">Login</button>
-                      </div>
-                      <div class="text-center mt-3">
-                          <a href="#" >Forgot Password?</a>
-                      </div>
-                      <div>
-                          <p class="mt-4">Don't have an account? <a href="{% url 'userregister' %}" >Register here</a></p>
-                      </div>
-                  </form>
-                </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- Admin Login Form End -->
- {% include "footer.html" %}
-
-  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-  
+ 
+    <footer>
+      <p>
+        © 2025 All Rights Reserved. Design by
+        <a href="mailto:twinkleroy7225@gmail" style="text-decoration: none;">twinkleroy7225@gmail.com</a>
+      </p>
+    </footer>
+    <a id="backToTopBtn" href="#top" title="Go to top"><img src="{% static 'images/top-arrow-blue.png' %}" width="12px" height="12px"/> </a>
 </body>
-
 </html>
