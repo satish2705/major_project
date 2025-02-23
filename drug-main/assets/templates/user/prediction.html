@@ -12,7 +12,7 @@
 <body id="top">
     <div class="main-container"> 
     <header>
-        <div id="menu-div" class="container right">
+        <div id="menu-div" class="row-wrapper right">
             <div class="col-auto">
                 <nav>
                     <ul>
@@ -41,12 +41,12 @@
         </div>
         <section>
           <div class="container">
-            <div class="col">
+            <div class="col-10">
               <div class="p-4">
                 <div class="custom_heading-container">
                   <h2 class="p-4 text-center text-shadow ">Drug Effectiveness Prediction</h2>
                 </div>
-                <div class="form_container">
+                <div class="">
                   <form method="POST">
                     {% csrf_token %}
                     <div class="col">
@@ -125,15 +125,13 @@
                         </div>
                       </div>
                     </div>
-                    
-                      <button type="submit" class="btn btn-primary shadow-primary " style="padding: 0%;">Predict</button>
-                    
+                      <button type="submit" class="btn btn-primary shadow-primary btn-block" style="text-decoration: none;">Predict</button>
                   </form>
                   {% if prediction_text %}
                       <div class="result">
                           <p class="text-shadow">{{ prediction_text }}</p>
                       </div>
-                      <a href="{% url 'medication' %}" class="btn btn-primary shadow-primary btn-block">View Medications</a>
+                      <a href="{% url 'medication' %}" class="btn btn-primary shadow-primary btn-block" style="text-decoration: none;">View Medications</a>
                   {% endif %}
                 </div>
               </div>
