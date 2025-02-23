@@ -45,19 +45,17 @@
       <div class="container" style="padding: 2em;">
         <div class="col-4"></div>
         <div class="col-4 p-3 dpsw">
-            <div class="card text-center mb-4">
                 <h4>Upload Dataset</h4>
-                <div class="card-body">
+                <div class="mb-3">
                     <form method="post" action="" enctype="multipart/form-data">
                         {% csrf_token %}
                     <p class="card-text">Upload and manage your datasets for model training.</p>
-                    <input type="file" class="form-control" id="fileInput" webkitdirectory multiple /> <br>
+                    <input type="file" class="input-container" id="fileInput" multiple /> <br>
 
-                    <button type="submit" class="custom-button">Upload Now</button>
+                    <button type="submit" class="btn btn-primary btn-block">Upload Now</button>
                     </form>
                 </div>
             </div>
-        </div>
         <div class="col-4"></div>
       </div>
     </header>
