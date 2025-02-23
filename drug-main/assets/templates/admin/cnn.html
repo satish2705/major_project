@@ -1,12 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drug</title>
     <link href="{% static 'css/styles1.css' %}" rel="stylesheet" />
 </head>
+<body id="top">
+    <header>
+        <div id="menu-div" class="container right">
+            <div class="col-auto">
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'adashboard' %}">Admin Dashboard</a></li>
+                        <li><a href="{% url 'upload' %}">Upload Dataset</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn dropdown-toggle">Model</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'cnn' %}" class="dropdown-item">Generate CNN</a>
+                            </div>
+                        </li>
+                        <li><a class="nav-link" href="{% url 'index' %}">Logout</a></li>
+                        <li>
+                            <form action="" method="get">
+                                <input class="input-container" type="text" id="search" name="search" placeholder="search">
+                            </form>
+                        </li>
+                        <li><a href="#" class="menu-icon"><span><img src="{% static 'images/menu.png' %}" width="30px" height="30px"/></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="logo-div">
+            <div class="p-2 logo-p">
+                <a href="/" class="Btn">
+                    <span class="svgContainer">
+                        <h1 class="logo">Drug</h1>
+                    </span>
+                    <span class="BG"></span>
 <body id="top">
     <header>
         <div id="menu-div" class="container right">
@@ -82,6 +115,15 @@
             </div>
         <div class="col-2"></div>
       </div>
+    </header>
+ 
+    <footer>
+      <p>
+        © 2025 All Rights Reserved. Design by
+        <a href="mailto:twinkleroy7225@gmail" style="text-decoration: none;">twinkleroy7225@gmail.com</a>
+      </p>
+    </footer>
+    <a id="backToTopBtn" href="#top" title="Go to top"><img src="{% static 'images/top-arrow-blue.png' %}" width="12px" height="12px"/> </a>
     </header>
  
     <footer>
