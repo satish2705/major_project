@@ -43,54 +43,45 @@
                 </a>
             </div>
         </div>
-        <div class="container" style="padding: 2em;" id="hero">
-            <div class="col-8 p-3 dpsw">
-                    
-                <div class="card-header bg" style="background-color: rgb(133, 209, 240);">
-                    <h5>Generate CNN Algorithm</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Click the button to run the CNN algorithm.</p>
+        <div class="container" id="hero">
+            <div class="card-header bg" style="background-color: rgb(133, 209, 240);">
+                <h5>Generate CNN Algorithm</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Click the button to run the CNN algorithm.</p>
 
-                    <!-- Form to run the CNN algorithm -->
-                    <form method="POST" action="{% url 'cnn' %}">
-                        {% csrf_token %}
+                <!-- Form to run the CNN algorithm -->
+                <form method="POST" action="{% url 'cnn' %}">
+                    {% csrf_token %}
 
-                        <!-- Submit button to run the CNN algorithm -->
-                        <button type="submit" class="btn btn-primary" style="background-color:  rgb(54, 175, 223);">
-                            Run Algorithm
-                        </button>
+                    <!-- Submit button to run the CNN algorithm -->
+                    <button type="submit" class="btn btn-primary" style="background-color:  rgb(54, 175, 223);">
+                        Run Algorithm
+                    </button>
 
-                        <table class="table table-bordered mt-4">
-                          <thead class="thead-light">
-                              <tr>
-                                  <th>Metric</th>
-                                  <th>Value</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>Accuracy</td>
-                                  <td>{{ metrics.accuracy|floatformat:2 }}</td>
-                              </tr>
-                              <tr>
-                                  <td>AUC</td>
-                                  <td>{{ metrics.auc|floatformat:2 }}</td>
-                              </tr>
-                              <tr>
-                                  <td>Created At</td>
-                                  <td>{{ metrics.created_at }}</td>
-                              </tr>
-                          </tbody>
-                        </table>
-                    </form>
-
-                </div>
-
-
-
-
-
+                    <table class="table table-bordered mt-4">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Metric</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Accuracy</td>
+                                <td>{{ metrics.accuracy|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td>AUC</td>
+                                <td>{{ metrics.auc|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td>Created At</td>
+                                <td>{{ metrics.created_at }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
 
             </div>
         </div>
