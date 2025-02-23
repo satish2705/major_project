@@ -9,55 +9,55 @@
 </head>
 <body id="top">
     <header>
-      <div class="container">
-          <div class="col-1">
-              <div class="p-2">
-                  <a href="{% url 'index' %}" class="Btn">
-                      <span class="svgContainer">
-                          <h1 class="logo">Drug</h1>
-                      </span>
-                      <span class="BG"></span>
-                  </a>
-              </div>
-          </div>
-          <div class="col-auto">
-          </div>
-          <div class="col-auto">
-              <nav>
-                  <ul>
-                      <li><a href="{% url 'index' %}">Home</a></li>
-                      <!-- <li><a href="#about">About</a></li>
-                      <li><a href="#medicine">Medicine</a></li>
-                      <li><a href="{% url 'adminlogin' %}">Admin</a></li>
-                      <li><a href="{% url 'userlogin' %}">User</a></li>
-                      <li><a href="#contact">Contact</a></li> -->
-                      <li>
-                          <form action="" method="get">
-                              <input class="input-container" type="text" id="search" name="search" placeholder="search">
-                          </form>
-                      </li>
-                      <li><a href="#"><span><img src="{% static 'images/menu.png' %}"/></span></a></li>
-                  </ul>
-              </nav>
-          </div>
-          
-      </div>
-      <div class="container" style="padding: 2em;">
-        <div class="col-4"></div>
-        <div class="col-4 p-3 dpsw">
-                <h4>Upload Dataset</h4>
-                <div class="mb-3">
-                    <form method="post" action="" enctype="multipart/form-data">
-                        {% csrf_token %}
-                    <p class="card-text">Upload and manage your datasets for model training.</p>
-                    <input type="file" class="input-container" id="fileInput" multiple /> <br>
-
-                    <button type="submit" class="btn btn-primary btn-block">Upload Now</button>
-                    </form>
-                </div>
+        <div id="menu-div" class="container right">
+            <div class="col-auto">
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'adashboard' %}">Admin Dashboard</a></li>
+                        <li><a href="{% url 'upload' %}">Upload Dataset</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn dropdown-toggle">Model</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'cnn' %}" class="dropdown-item">Generate CNN</a>
+                            </div>
+                        </li>
+                        <li><a class="nav-link" href="{% url 'index' %}">Logout</a></li>
+                        <li>
+                            <form action="" method="get">
+                                <input class="input-container" type="text" id="search" name="search" placeholder="search">
+                            </form>
+                        </li>
+                        <li><a href="#" class="menu-icon"><span><img src="{% static 'images/menu.png' %}" width="30px" height="30px"/></span></a></li>
+                    </ul>
+                </nav>
             </div>
-        <div class="col-4"></div>
-      </div>
+        </div>
+        <div id="logo-div">
+            <div class="p-2 logo-p">
+                <a href="/" class="Btn">
+                    <span class="svgContainer">
+                        <h1 class="logo">Drug</h1>
+                    </span>
+                    <span class="BG"></span>
+                </a>
+            </div>
+        </div>
+        <div class="container" style="padding: 2em;" id="hero">
+            <div class="col-4"></div>
+            <div class="col-4 p-3 dpsw">
+                    <h4>Upload Dataset</h4>
+                    <div class="mb-3">
+                        <form method="post" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <p class="card-text">Upload and manage your datasets for model training.</p>
+                        <input type="file" class="input-container" id="fileInput" multiple /> <br>
+
+                        <button type="submit" class="btn btn-primary btn-block">Upload Now</button>
+                        </form>
+                    </div>
+                </div>
+            <div class="col-4"></div>
+        </div>
     </header>
  
     <footer>
