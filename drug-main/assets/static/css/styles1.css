@@ -299,7 +299,7 @@ section {
 }
 
 .dd{
-    position: relative;
+    position: relative; /* can be used to position the div below to 40px in <header> text*/
     top: 40px;
 }
 
@@ -431,7 +431,6 @@ html:has(body:target) #backToTopBtn {
   }
 
 #hero div {
-    margin: 2rem;
     align-items: center;
     text-align: left;
 }
@@ -454,19 +453,24 @@ html:has(body:target) #backToTopBtn {
     justify-content: space-between;
     text-align: center;
 }
-.center {
-    text-align: center;
 
+.centr {
+    text-align: center;
 }
+
 .djs {
-    text-align: justify;
+    text-align: justify; /* as in header <p class="djs"> Welcome to the Admin Dashboard*/
     width: 50% !important;
 }
+
+/* to give shadow under the form  */
 .dpsw {
         background-color: rgba(255, 255, 255, 0.317) !important;
         backdrop-filter: blur(20px) !important;
         box-shadow: 0 2rem 4rem rgb(0, 54, 37) !important;
         border-radius: 20px;
+        text-align: center;
+        padding: 1rem;
 }
 .dropdown {
     position: relative;

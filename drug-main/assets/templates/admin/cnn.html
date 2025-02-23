@@ -9,83 +9,94 @@
 </head>
 <body id="top">
     <div class="main-container">  <!-- for responsive design -->
-    <header>
-        <div id="menu-div" class="container right">
-            <div class="col-auto">
-                <nav>
-                    <ul>
-                        <li><a href="{% url 'adashboard' %}">Admin Dashboard</a></li>
-                        <li><a href="{% url 'upload' %}">Upload Dataset</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropbtn dropdown-toggle">Model</a>
-                            <div class="dropdown-content">
-                                <a href="{% url 'cnn' %}" class="dropdown-item">Generate CNN</a>
-                            </div>
-                        </li>
-                        <li><a class="nav-link" href="{% url 'index' %}">Logout</a></li>
-                        <li>
-                            <form action="" method="get">
-                                <input class="input-container" type="text" id="search" name="search" placeholder="search">
-                            </form>
-                        </li>
-                        <li><a href="#" class="menu-icon"><span><img src="{% static 'images/menu.png' %}" width="30px" height="30px"/></span></a></li>
-                    </ul>
-                </nav>
+        <header>
+            <div id="menu-div" class="container right">
+                <div class="col-auto">
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'adashboard' %}">Admin Dashboard</a></li>
+                            <li><a href="{% url 'upload' %}">Upload Dataset</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropbtn dropdown-toggle">Model</a>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'cnn' %}" class="dropdown-item">Generate CNN</a>
+                                </div>
+                            </li>
+                            <li><a class="nav-link" href="{% url 'index' %}">Logout</a></li>
+                            <li>
+                                <form action="" method="get">
+                                    <input class="input-container" type="text" id="search" name="search" placeholder="search">
+                                </form>
+                            </li>
+                            <li><a href="#" class="menu-icon"><span><img src="{% static 'images/menu.png' %}" width="30px" height="30px"/></span></a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-        <div id="logo-div">
-            <div class="p-2 logo-p">
-                <a href="/" class="Btn">
-                    <span class="svgContainer">
-                        <h1 class="logo">Drug</h1>
-                    </span>
-                    <span class="BG"></span>
-                </a>
+            <div id="logo-div">
+                <div class="p-2 logo-p">
+                    <a href="/" class="Btn">
+                        <span class="svgContainer">
+                            <h1 class="logo">Drug</h1>
+                        </span>
+                        <span class="BG"></span>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="container" id="hero">
-            <div class="card-header bg" style="background-color: rgb(133, 209, 240);">
-                <h5>Generate CNN Algorithm</h5>
+            <div class="container" style="padding: 2em; justify-content: center;" id="hero">
+                <div class="col-3"></div>
+                <div class="col-6 p-3 dpsw">
+                        
+                    <div class="bg">
+                        <h3>Generate CNN Algorithm</h3>
+                    </div>
+                    <div >
+                        <p >Click the button to run the CNN algorithm.</p>
+
+                        <!-- Form to run the CNN algorithm -->
+                        <form method="POST" action="{% url 'cnn' %}">
+                            {% csrf_token %}
+
+                            <!-- Submit button to run the CNN algorithm -->
+                            <button type="submit" class="btn btn-primary" style="background-color:  rgb(54, 175, 223);">
+                                Run Algorithm
+                            </button>
+
+                            <table class="table table-bordered mt-4">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Accuracy</td>
+                                    <td>{{ metrics.accuracy|floatformat:2 }}</td>
+                                </tr>
+                                <tr>
+                                    <td>AUC</td>
+                                    <td>{{ metrics.auc|floatformat:2 }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Created At</td>
+                                    <td>{{ metrics.created_at }}</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </form>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="col-3"></div>
             </div>
-            <div class="card-body">
-                <p class="card-text">Click the button to run the CNN algorithm.</p>
-
-                <!-- Form to run the CNN algorithm -->
-                <form method="POST" action="{% url 'cnn' %}">
-                    {% csrf_token %}
-
-                    <!-- Submit button to run the CNN algorithm -->
-                    <button type="submit" class="btn btn-primary" style="background-color:  rgb(54, 175, 223);">
-                        Run Algorithm
-                    </button>
-
-                    <table class="table table-bordered mt-4">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>Metric</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Accuracy</td>
-                                <td>{{ metrics.accuracy|floatformat:2 }}</td>
-                            </tr>
-                            <tr>
-                                <td>AUC</td>
-                                <td>{{ metrics.auc|floatformat:2 }}</td>
-                            </tr>
-                            <tr>
-                                <td>Created At</td>
-                                <td>{{ metrics.created_at }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-
-            </div>
-        </div>
-    </header>
+        </header>
     <footer>
       <p>
         © 2025 All Rights Reserved. Design by
