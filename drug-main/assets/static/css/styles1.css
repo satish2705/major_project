@@ -463,9 +463,10 @@ html:has(body:target) #backToTopBtn {
     justify-content: center;
 }
 
+
 .djs {
     text-align: justify; /* as in header <p class="djs"> Welcome to the Admin Dashboard*/
-    width: 50% !important;
+    width: 70% !important;
 }
 
 /* to give shadow under the form  */
