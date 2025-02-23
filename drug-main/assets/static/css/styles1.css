@@ -1,4 +1,5 @@
-body {
+
+html body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,9 +8,19 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(11, 255, 255, 0.7)), url(th.jpeg) no-repeat center center fixed;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(11, 255, 255, 0.7)), url("../images/th.jpeg") no-repeat center center fixed;
     background-size: cover;
     transition: background-color 0.3s ease-in-out;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
 }
 
 header {
@@ -24,11 +35,19 @@ header {
     height: 100vh;
 }
 
-.logo {
-    color: white;
-    display: inline;
-    padding: 20px;
+.logo-p {
+    
     border-radius: 15px;
+    margin: 0;
+    position: fixed;
+    top: -0.5em;
+}
+.logo{
+    color: white;
+}
+
+.container.right {
+    justify-content: right;
 }
 
 .Btn {
@@ -96,13 +115,16 @@ nav {
     text-align: center;
     border-radius: 10px;
     animation: fadeIn 2s ease-in-out;
+    /* position: relative;
+    top: 1em !important; */
+    z-index: 97;
     
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0 15px 0 0;
+    /* padding: 0 15px 0 0; */
     display: flex;
     justify-content: right;
     flex-wrap: wrap;
@@ -243,23 +265,37 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 #backToTopBtn {
     /* display: none; Hidden by default */
     position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* 20px from the bottom */
+    bottom: 35px; /* 20px from the bottom */
     right: 30px; /* 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: #555; /* Dark grey background */
+    background-color: rgba(255, 255, 255, 0.364); /* Dark grey background */
     color: white; /* White text */
     cursor: pointer; /* Pointer/hand icon */
     padding: 15px; /* Some padding */
     border-radius: 50%; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
+    font-size: 10px; /* Increase font size */
+    background-image: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: center ; /* Do not repeat the background image */
+    background-size: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.menu-icon {
+    background-image: url(../images/menu.png) !important;
+    background-size: 30px !important;
+    display: block !important;
+    width: 30px;
+    height: 30px;
 }
 
 .dd{
@@ -268,7 +304,8 @@ section {
 }
 
 #backToTopBtn:hover {
-    background-color: #333; /* Darker background on hover */
+    background-color: #ffffff; /* Darker background on hover */
+    filter: invert(100%);
 }
 
 html:has(body:target) #backToTopBtn {
@@ -431,15 +468,79 @@ html:has(body:target) #backToTopBtn {
         box-shadow: 0 2rem 4rem rgb(0, 54, 37) !important;
         border-radius: 20px;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    /* background-color: #4CAF50; */
+    color: white;
+    /* padding: 16px; */
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #f9f9f9; */
+    backdrop-filter: blur(20px) !important;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
 footer {
     background: rgba(51, 51, 51, 0.7);
     color: white;
     text-align: center;
-    padding: 15px 0;
+    /* padding: 15px 0; */
     backdrop-filter: blur(10px);
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    position: fixed;
+    bottom: 0;
+    z-index: 98;
     /* margin: 1em; */
     animation: fadeIn 2.5s ease-in-out;
+    width: 100%;
+    
+}
+
+footer p {
+    margin: 0.5em;
 }
 
 /* Media Queries for Responsiveness */
