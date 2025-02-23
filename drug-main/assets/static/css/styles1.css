@@ -458,6 +458,11 @@ html:has(body:target) #backToTopBtn {
     text-align: center;
 }
 
+.feature {
+    display: flex;
+    justify-content: center;
+}
+
 .djs {
     text-align: justify; /* as in header <p class="djs"> Welcome to the Admin Dashboard*/
     width: 50% !important;
