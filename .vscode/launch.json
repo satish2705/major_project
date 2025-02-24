@@ -1,0 +1,28 @@
+{
+    "configurations": [
+
+        {
+            "name": "Python: Django",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "5027"
+            ],
+            "django": true,
+            "justMyCode": true
+        },
+
+        {
+            "type": "msedge",
+            "name": "preview",
+            "request": "launch",
+            "url": "http://localhost:5027"
+        },
+
+        
+
+        
+    ]
+}

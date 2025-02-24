@@ -10,19 +10,7 @@
 <body id="top">
   <div id="main-container">
     <header>
-        <div class="row-wrapper">
-            <div class="col-1">
-                <div class="p-2">
-                    <a href="{% url 'index' %}" class="Btn">
-                        <span class="svgContainer">
-                            <h1 class="logo">Drug</h1>
-                        </span>
-                        <span class="BG"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-auto">
-            </div>
+        <div class="container right">
             <div class="col-auto">
                 <nav>
                     <ul>
@@ -43,6 +31,16 @@
             </div>
             
         </div>
+        <div id="logo-div">
+          <div class="p-2 logo-p">
+              <a href="{% url 'index' %}" class="Btn">
+                  <span class="svgContainer">
+                      <h1 class="logo">Drug</h1>
+                  </span>
+                  <span class="BG"></span>
+              </a>
+          </div>
+      </div>
         <div class="container" id="hero">
             <div>
                 <h3 class="dd">
@@ -264,16 +262,16 @@
             <div class="form_container">
               <form>
                 <div class="form-group">
-                <strong> <label for="exampleInputName1">Name</label></strong> 
-                  <input type="text" class="input-container">
+                <strong> <label for="contact-name" id="">Name</label></strong> 
+                  <input type="text" class="input-container" id="contact-name" name="contact-name">
                 </div>
                 <div class="form-group">
-                  <strong><label for="exampleInputNumber1">Phone Number</label></strong> 
-                  <input type="text" class="input-container" >
+                  <strong><label for="contact-phone">Phone Number</label></strong> 
+                  <input type="text" class="input-container" id="contact-phone" name="contact-Phone">
                 </div>
                 <div class="form-group">
-                <strong> <label for="exampleInputEmail1">Email</label></strong>
-                  <input type="email" class="input-container">
+                <strong> <label for="contact-Email">Email</label></strong>
+                  <input type="email" class="input-container" id="contact-email" name="InputEmail">
                 </div>
                 <div class="form-group">
                   <strong><label for="inputState">Select medicine</label></strong> 
@@ -284,10 +282,10 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <strong> <label for="exampleInputMessage">Message</label></strong> 
-                  <input type="text" class="input-container" >
+                  <strong> <label for="InputMessage">Message</label></strong> 
+                  <input type="text" class="input-container" id="contact-message" name="InputMessage">
                 </div>
-                <strong><button type="submit" class="btn btn-primary">Send</button></strong> 
+                <strong><button type="submit" class="btn btn-primary" id="contact-send">Send</button></strong> 
               </form>
             </div>
           </div>  

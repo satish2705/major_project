@@ -13,7 +13,7 @@
     <div class="main-container"> 
     <header>
         <div id="menu-div" class="row-wrapper right">
-            <div class="col-auto">
+            <div class="col">
                 <nav>
                     <ul>
                         <li><a href="{% url 'udashboard' %}">User Dashboard</a></li>
@@ -39,7 +39,7 @@
                 </a>
             </div>
         </div>
-        <section>
+        <div class="container">
           <div class="container">
             <div class="col-10">
               <div class="p-4">
@@ -125,7 +125,7 @@
                         </div>
                       </div>
                     </div>
-                      <button type="submit" class="btn btn-primary shadow-primary btn-block" style="text-decoration: none;">Predict</button>
+                      <button type="submit" class="btn btn-danger shadow-primary btn-block" style="text-decoration: none;">Predict</button>
                   </form>
                   {% if prediction_text %}
                       <div class="result">
@@ -137,7 +137,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
     </header>
  
     <footer>
