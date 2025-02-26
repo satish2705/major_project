@@ -833,6 +833,8 @@ footer p {
     margin: 0.5em;
 }
 
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     header, nav, footer {
