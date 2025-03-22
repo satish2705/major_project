@@ -30,10 +30,10 @@ urlpatterns = [
     path('contact/', m.contact, name='contact'),
     path('medicine/', m.medicine, name='medicine'),
 
-   path('adminlogin/', v.adminlogin, name='adminlogin'),
-   path('adashboard/', v.adashboard,name='adashboard'),
-   path('cnn/', v.cnn,name='cnn'),
-   path('upload/', v.upload, name='upload'),
+    path('adminlogin/', v.adminlogin, name='adminlogin'),
+    path('adashboard/', v.adashboard,name='adashboard'),
+    path('cnn/', v.cnn,name='cnn'),
+    path('upload/', v.upload, name='upload'),
 
     path('register/', u.register, name='userregister'),
     path('userlogin/',u.userlogin, name='userlogin'),
