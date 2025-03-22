@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "drug/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "drug/wsgi.py"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "drug.settings",
+    "SECRET_KEY": "django-insecure-^-*18+av=_@q+n#d7e)j#=fq-tk+i#c@7p!o^s!$y)f7b086_$",
+    "DEBUG": "false",
+    "ALLOWED_HOSTS": "your-vercel-domain.vercel.app"
+  }
+}
