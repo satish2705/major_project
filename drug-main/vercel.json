@@ -17,6 +17,6 @@
     "DJANGO_SETTINGS_MODULE": "drug.settings",
     "SECRET_KEY": "django-insecure-^-*18+av=_@q+n#d7e)j#=fq-tk+i#c@7p!o^s!$y)f7b086_$",
     "DEBUG": "false",
-    "ALLOWED_HOSTS": "major-project-udlg.vercel.app"
+    "ALLOWED_HOSTS": ".vercel.app"
   }
 }

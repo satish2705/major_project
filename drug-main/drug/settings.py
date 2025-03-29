@@ -78,17 +78,29 @@ WSGI_APPLICATION = 'drug.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         # 'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': 'drugs',
+#         'USER' : 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT':'3306'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'drugs',
-        'USER' : 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT':'3306'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv("dbname"),
+        'USER': os.getenv("user"),
+        'PASSWORD': os.getenv("password"),
+        'HOST': os.getenv("host"),
+        'PORT': os.getenv("port"),
     }
 }
+
 
 
 # Password validation
